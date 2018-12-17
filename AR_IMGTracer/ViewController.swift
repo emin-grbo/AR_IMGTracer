@@ -15,14 +15,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
   @IBOutlet weak var sceneView: ARSCNView!
   let configuration = ARImageTrackingConfiguration()
   
-  
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     sceneView.delegate = self
     
     let scene = SCNScene(named: "ARassets.scnassets/GameScene.scn")!
+    
     sceneView.scene = scene
     
     sceneView.autoenablesDefaultLighting = true
@@ -32,12 +31,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
   
   override func viewWillAppear(_ animated: Bool) {
     
-    guard  let trackedImages = ARReferenceImage.referenceImages(inGroupNamed: "Photos", bundle: Bundle.main) else {
+    guard let trackedImages = ARReferenceImage.referenceImages(inGroupNamed: "Photos", bundle: Bundle.main) else {
       return print("No images avaialble")
     }
     
     configuration.trackingImages = trackedImages
-    configuration.maximumNumberOfTrackedImages = 2
+    configuration.maximumNumberOfTrackedImages = 1
     
     sceneView.session.run(configuration)
   }
@@ -45,32 +44,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
   
   
   func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+    return AirplaneNode()
     
-    let node = SCNNode()
-
-    if let _ = anchor as? ARImageAnchor {
-      if let planeScene = SCNScene(named: "ARassets.scnassets/plane.scn") {
-        let planeNode = planeScene.rootNode.childNodes.first!
-        
-        planeNode.position = SCNVector3Zero
-        planeNode.position.y = 0.15
-        
-        if let tip = planeScene.rootNode.childNode(withName: "prop_tip01", recursively: true) {
-          let propelerRotation = SCNAction.rotateBy(x: 0, y: 5, z: 0, duration: 0.1)
-          let propelerFinal = SCNAction.repeatForever(propelerRotation)
-          tip.runAction(propelerFinal)
-        }
-        
-        animate(node: planeNode, scene: planeScene)
-        
-        node.addChildNode(planeNode)
-      }
-    }
-      
-
-    return node
   }
-  
+    
+ 
   func animate(node: SCNNode, scene: SCNScene) {
     
     // Rotation Animation---------------------------------------------------
@@ -101,10 +79,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     let animations = SCNAction.group([rotationFinal, moveRepeat])
     
     node.runAction(animations)
+    
   }
-  
-  
-
-
 }
 

@@ -12,7 +12,9 @@
 		D76A767721AC7BEB00FAE86C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D76A767521AC7BEB00FAE86C /* Main.storyboard */; };
 		D76A767C21AC7BEC00FAE86C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D76A767A21AC7BEC00FAE86C /* LaunchScreen.storyboard */; };
 		D76A768821AC856E00FAE86C /* ARassets.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D76A768721AC856E00FAE86C /* ARassets.scnassets */; };
+		D77DF6CE21B817DD004B1E8E /* flight.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D77DF6CD21B817DD004B1E8E /* flight.mp3 */; };
 		D78F2F6221AD472A00FB065C /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D78F2F6121AD472A00FB065C /* assets.xcassets */; };
+		D7BF06C521C5217600992DD7 /* AirplaneNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BF06C421C5217600992DD7 /* AirplaneNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +25,9 @@
 		D76A767B21AC7BEC00FAE86C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D76A767D21AC7BEC00FAE86C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D76A768721AC856E00FAE86C /* ARassets.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = ARassets.scnassets; sourceTree = "<group>"; };
+		D77DF6CD21B817DD004B1E8E /* flight.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = flight.mp3; sourceTree = "<group>"; };
 		D78F2F6121AD472A00FB065C /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
+		D7BF06C421C5217600992DD7 /* AirplaneNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,9 @@
 			children = (
 				D76A767121AC7BEB00FAE86C /* AppDelegate.swift */,
 				D76A767321AC7BEB00FAE86C /* ViewController.swift */,
+				D7BF06C421C5217600992DD7 /* AirplaneNode.swift */,
 				D76A767521AC7BEB00FAE86C /* Main.storyboard */,
+				D77DF6CD21B817DD004B1E8E /* flight.mp3 */,
 				D78F2F6121AD472A00FB065C /* assets.xcassets */,
 				D76A768721AC856E00FAE86C /* ARassets.scnassets */,
 				D76A767A21AC7BEC00FAE86C /* LaunchScreen.storyboard */,
@@ -128,6 +134,7 @@
 				D76A767C21AC7BEC00FAE86C /* LaunchScreen.storyboard in Resources */,
 				D76A768821AC856E00FAE86C /* ARassets.scnassets in Resources */,
 				D78F2F6221AD472A00FB065C /* assets.xcassets in Resources */,
+				D77DF6CE21B817DD004B1E8E /* flight.mp3 in Resources */,
 				D76A767721AC7BEB00FAE86C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7BF06C521C5217600992DD7 /* AirplaneNode.swift in Sources */,
 				D76A767421AC7BEB00FAE86C /* ViewController.swift in Sources */,
 				D76A767221AC7BEB00FAE86C /* AppDelegate.swift in Sources */,
 			);
