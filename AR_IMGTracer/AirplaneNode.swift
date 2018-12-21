@@ -15,23 +15,19 @@ class AirplaneNode: SCNNode {
   private var audio = SCNNode()
 
   override init() {
+    
     super.init()
 
     if let planeScene = SCNScene(named: "ARassets.scnassets/plane.scn") {
-      let planeNode = planeScene.rootNode.childNodes.first!
-//      planeNode.position = SCNVector3Zero
-//      planeNode.position.y = 0.15
       
+      let planeNode = planeScene.rootNode.childNodes.first!
       self.addChildNode(planeNode)
     }
     
     self.music = SCNAction.playAudio(SCNAudioSource(named: "flight.mp3")!, waitForCompletion: false)
     
-    if let _ = self.music {
-      let x = SCNNode()
-      self.audio = x
-      self.addChildNode(x)
-    }
+    guard let music = self.music else { return }
+    self.runAction(music)
     
     self.position = SCNVector3Zero
     self.position.y = 0.15
@@ -48,10 +44,6 @@ class AirplaneNode: SCNNode {
       } else {
       guard let music = music else {return}
       self.audio.runAction(music)
-//        if let m = self.music {
-//          self.music?.speed = 0
-//          self.audio.runAction(m)
-//        }
       }
       
     }
