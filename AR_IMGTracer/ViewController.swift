@@ -13,6 +13,7 @@ import SceneKit
 class ViewController: UIViewController, ARSCNViewDelegate {
 
   @IBOutlet weak var sceneView: ARSCNView!
+  
   let configuration = ARImageTrackingConfiguration()
   
   override func viewDidLoad() {
@@ -21,7 +22,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     sceneView.delegate = self
     
     let scene = SCNScene(named: "ARassets.scnassets/GameScene.scn")!
-    
     sceneView.scene = scene
     
     sceneView.autoenablesDefaultLighting = true
@@ -45,8 +45,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
   
   func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
     return AirplaneNode()
-    
   }
+  
+  func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+//   node.isHidden != oldValue
+  }
+  
     
  
   func animate(node: SCNNode, scene: SCNScene) {
